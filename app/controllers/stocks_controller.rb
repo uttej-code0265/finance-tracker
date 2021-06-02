@@ -3,6 +3,7 @@ class StocksController < ApplicationController
         if params[:stock].present?
             @stock=Stock.new_lookup(params[:stock])
             if @stock
+                p @stock.name
                 respond_to do |format|
                     format.js {render partial: 'users/result'}
                 end
